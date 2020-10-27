@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              KC_Y,   KC_U,     KC_I,     KC_O,               KC_P,         KC_BSLS,
                              KC_H,   KC_J,     KC_K,     KC_L,  LT(MDIA, KC_SCLN),  GUI_T(KC_QUOT),
                              KC_N,   KC_M,  KC_COMM,   KC_DOT,     CTL_T(KC_SLSH),         KC_RSFT,
-                                    KC_UP,  KC_DOWN,  KC_LBRC,            KC_RBRC,          TT(SYMB),
+                                    KC_UP,  KC_DOWN,  KC_LBRC,            KC_RBRC,          MO(SYMB),
           KC_RALT,  CTL_T(KC_ESC),
           KC_PGUP,
           KC_PGDN, KC_TAB, KC_ENT
@@ -153,6 +153,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void matrix_init_user(void) {
 
 };
+
+void keyboard_post_init_user(void) {
+  // Customise these values to desired behaviour
+  debug_enable=true;
+  debug_matrix=true;
+  debug_keyboard=true;
+  //debug_mouse=true;
+}
 
 
 // Runs constantly in the background, in a loop.
